@@ -1,0 +1,32 @@
+.header {
+    height: 80px;
+    background-color: #1C2B35;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+
+}
+
+.header img {
+    width: 140px;
+    height: 40px;
+    margin-left: 100px;
+}
+
+.header a {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 17px;
+    margin-right: 32px;
+}
+
+.header a:hover {
+    color: gold;
+    background-color: blueviolet;
+    border: 2px solid salmon;
+    padding: 10px;
+    border-radius: 10px;
+
+}
