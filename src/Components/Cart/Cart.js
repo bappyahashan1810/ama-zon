@@ -2,10 +2,10 @@ import React from 'react';
 import './Cart.css'
 const Cart = (props) => {
     const { cart } = props;
-    console.log(props);
+    // console.log(props);
     const total = cart.reduce((previous, current) => previous + current.price, 0);
     const shipping = cart.reduce((previous, current) => previous + current.shipping, 0);
-    const tex = (total * .1.toFixed(2));
+    const tex = (total * 0.1).toFixed(2);
     const grand = total + shipping + +tex;
     return (
         <div className='cart-container'>
