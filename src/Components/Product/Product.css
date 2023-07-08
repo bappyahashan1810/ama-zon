@@ -52,4 +52,9 @@
 
 .product-info {
     padding-left: 9px;
+
+}
+
+.product-info p {
+    margin-bottom: 0;
 }

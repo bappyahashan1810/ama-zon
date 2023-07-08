@@ -5,3 +5,16 @@
     font-weight: 400;
     text-align: center;
 }
+
+.cart-container {
+    position: sticky;
+    top: 0;
+}
+
+.cart-container p {
+    margin-left: 10px;
+}
+
+.cart-container h6 {
+    font-size: 21px;
+}
