@@ -31,10 +31,21 @@ const Shop = () => {
 
     }, [products]);
 
-    const addEventHandler = (product) => {
-        const newCart = [...cart, product];
+    const addEventHandler = (selectedProduct) => {
+        let newCart = [];
+        const exits = cart.find(product => product.id === selectedProduct.id);
+        if (!exits) {
+            selectedProduct.quantity = 1;
+            newCart = [...cart, selectedProduct];
+        }
+        else {
+            const restProduct = cart.filter(product => product.id !== selectedProduct.id);
+            exits.quantity = exits.quantity + 1;
+            newCart = [...restProduct, exits];
+        }
+
         setCart(newCart);
-        addToDb(product.id);
+        addToDb(selectedProduct.id);
 
     }
     return (
