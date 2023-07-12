@@ -1,16 +1,18 @@
 import React from 'react';
 import './Header.css'
 import logo from '../../images/Logo.svg';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
         <nav className='header'>
             <img src={logo} alt="" />
             <div>
-                <a href="/home">Home</a>
-                <a href="/shopping">Shopping</a>
-                <a href="/cart">Cart</a>
-                <a href="/about">About</a>
+
+                <NavLink className={({ isActive }) => isActive ? 'bg-lime-800' : undefined} to="/">Shopping</NavLink>
+                <NavLink to="/orders">Orders</NavLink>
+                <NavLink to="/inventory">Inventory</NavLink>
+                <NavLink to="/about">About</NavLink>
             </div>
         </nav>
     );
