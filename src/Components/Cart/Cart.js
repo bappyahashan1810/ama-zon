@@ -1,8 +1,11 @@
 import React from 'react';
 import './Cart.css'
-const Cart = ({ cart }) => {
-    // const { props } = props;
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDirections, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
+const Cart = ({ cart, clearCart }) => {
+    // const { props } = props;
 
 
 
@@ -32,6 +35,12 @@ const Cart = ({ cart }) => {
             <p>Total Shipping: ${shipping}</p>
             <p>Tex: ${tex}</p>
             <h6>Grand Total: ${grand}</h6>
+            <button className='bg-rose-600 rounded-md p-2 mt-10  items-center w-full text-white' onClick={clearCart}>
+                Clear Cart  <FontAwesomeIcon className='ml-3' icon={faTrashCan}></FontAwesomeIcon></button><br /><br />
+            <Link to='/orders'>
+                <button className='bg-amber-600 w-full mt-6 p-2 rounded-md items-center text-white'>Review Order <FontAwesomeIcon className='ml-3' icon={faDirections}></FontAwesomeIcon>
+                </button>
+            </Link>
         </div>
     );
 };
