@@ -1,10 +1,10 @@
 import React from 'react';
 import './Cart.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDirections, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { faShippingFast } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-const Cart = ({ cart, clearCart }) => {
+const Cart = ({ cart, clearCart, children }) => {
     // const { props } = props;
 
 
@@ -35,12 +35,9 @@ const Cart = ({ cart, clearCart }) => {
             <p>Total Shipping: ${shipping}</p>
             <p>Tex: ${tex}</p>
             <h6>Grand Total: ${grand}</h6>
-            <button className='bg-rose-600 rounded-md p-2 mt-10  items-center w-full text-white' onClick={clearCart}>
-                Clear Cart  <FontAwesomeIcon className='ml-3' icon={faTrashCan}></FontAwesomeIcon></button><br /><br />
-            <Link to='/orders'>
-                <button className='bg-amber-600 w-full mt-6 p-2 rounded-md items-center text-white'>Review Order <FontAwesomeIcon className='ml-3' icon={faDirections}></FontAwesomeIcon>
-                </button>
-            </Link>
+            <button className='bg-rose-600 rounded-md p-2 mt-10  items-center w-full text-white' >
+                <Link to='/shipping'>Shipping</Link><FontAwesomeIcon className='ml-3' icon={faShippingFast}></FontAwesomeIcon></button><br /><br />
+            {children}
         </div>
     );
 };

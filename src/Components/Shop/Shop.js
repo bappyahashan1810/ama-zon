@@ -3,7 +3,9 @@ import './Shop.css'
 import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
 import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDirections } from '@fortawesome/free-solid-svg-icons';
 
 const Shop = () => {
     const products = useLoaderData();
@@ -66,7 +68,13 @@ const Shop = () => {
                 {
                     <Cart cart={cart}
                         clearCart={clearCart}
-                    ></Cart>
+                    >
+                        <Link to='/orders'>
+                            <button className='bg-amber-600 w-full mt-6 p-2 rounded-md items-center text-white'>Review Order <FontAwesomeIcon className='ml-3' icon={faDirections}></FontAwesomeIcon>
+                            </button>
+                        </Link>
+
+                    </Cart>
 
                 }
             </div>
