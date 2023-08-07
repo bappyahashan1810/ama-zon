@@ -22,7 +22,8 @@ function App() {
       children: [
         {
           path: '/',
-          loader: async () => fetch('products.json'),
+          loader: async () => fetch('http://localhost:5000/totalproducts'),
+
           element: <Shop></Shop>
         },
         {
@@ -32,7 +33,7 @@ function App() {
         },
         {
           path: 'inventory',
-          element: <Inventory></Inventory>
+          element: <PrivateRoutes><Inventory></Inventory></PrivateRoutes>
         },
         {
           path: 'about',

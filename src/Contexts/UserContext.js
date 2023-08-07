@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import app from '../FireBase/FireBase.config';
 
 
@@ -32,6 +32,8 @@ const UserContext = ({ children }) => {
         })
         return () => unSubscribe();
     }, [])
+
+
 
     const authInfo = { user, userSignUp, userLogin, userLogOut, loading };
 
